@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 2020_08_07_224725) do
 
   create_table "books", force: :cascade do |t|
     t.string "title"
-    t.string "content"
+    t.string "description"
     t.string "url"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -44,7 +44,7 @@ ActiveRecord::Schema.define(version: 2020_08_07_224725) do
     t.string "title"
     t.string "image"
     t.date "date"
-    t.time "time"
+    t.string "time"
     t.string "location"
     t.string "url"
     t.datetime "created_at", precision: 6, null: false
@@ -104,6 +104,7 @@ ActiveRecord::Schema.define(version: 2020_08_07_224725) do
     t.integer "age"
     t.string "location"
     t.string "interests"
+    t.string "image_url"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
