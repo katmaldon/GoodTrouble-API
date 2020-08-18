@@ -12,102 +12,88 @@ Event.destroy_all
 Note.destroy_all
 User.destroy_all
 Book.destroy_all
-Quote.destroy_all
+Resource.destroy_all
 
 
 puts "Seeded"
 
 events = Event.create([{
     title: "BLM March",
-    image: "3pm",
     date: "2020-10-05",
-    time: "",
-    location: "Brooklyn",
+    time: "3pm",
+    location: "Brooklyn Bridge Park",
     url: "blm.org",
     },
     {
-    title: "BLM March 2",
-    image: "4pm",
-    date: "2020-10-05",
-    time: "",
-    location: "Brooklyn",
-    url: "blm.org",
-    },
-    {
-    title: "BLM March 3",
-    image: "5pm",
-    date: "2020-10-05",
-    time: "",
-    location: "Brooklyn",
-    url: "blm.org"
-    },
-    {
-    title: "BLM March 4",
-    image: "",
-    date: "2020-10-05",
-    time: "5pm",
-    location: "Brooklyn",
-    url: "blm.org"
-    },
-    {
-    title: "BLM March 5",
-    image: "",
-    date: "2020-10-05",
-    time: "6pm",
-    location: "Brooklyn",
-    url: "blm.org"
-    },
-    {
-    title: "BLM March 6",
-    image: "",
-    date: "2020-10-05",
-    time: "10am",
-    location: "Brooklyn",
-    url: "blm.org"
-    },
-    {
-    title: "BLM March 7",
-    image: "",
-    date: "2020-10-05",
-    time: "11am",
-    location: "Brooklyn",
-    url: "blm.org"
-    },
-    {
-    title: "BLM March 8",
-    image: "",
-    date: "2020-10-05",
-    time: "12pm",
-    location: "Brooklyn",
-    url: "blm.org"
-    },
-    {
-    title: "BLM March 9",
-    image: "",
-    date: "2020-10-05",
+    title: "Trans Lives Matter",
+    date: "2020-09-17",
     time: "1pm",
-    location: "Brooklyn",
+    location: "Manhattan City Hall",
+    url: "thetrevorproject.org",
+    },
+    {
+    title: "Warriors In The Garden",
+    date: "2020-08-29",
+    time: "12pm",
+    location: "Barclay Center",
+    url: "warriorsinthegarden.org"
+    },
+    {
+    title: "Defund and Disarm NYPD",
+    date: "2020-11-28",
+    time: "5pm",
+    location: "New York Public Library",
+    url: "afsc.org"
+    },
+    {
+    title: "Art Speaks Gala (free)",
+    date: "2020-10-05",
+    time: "7pm",
+    location: "Brooklyn Museum",
+    url: "brooklynmuseum.org"
+    },
+    {
+    title: "Justice for Elijah",
+    date: "2020-08-25",
+    time: "7pm",
+    location: "Washington Square Park",
+    url: "nyphilharmonic.org"
+    },
+    {
+    title: "Block The Bridge",
+    date: "2020-09-07",
+    time: "5pm",
+    location: "Manhattan Bridge",
     url: "blm.org"
     },
     {
-    title: "BLM March 10",
-    image: "",
-    date: "2020-10-05",
-    time: "10am",
-    location: "Brooklyn",
-    url: "blm.org"
+    title: "March for Votes",
+    date: "2020-10-20",
+    time: "12pm",
+    location: "B'Way/Wall St, northbound",
+    url: "vote.org"
     }
 ])
 
 resources = Resource.create([{
-    title: "Know your rights",
-    description: "Basic right to protest and legel representation",
+    title: "Your rights as an activist",
+    description: "overview of he protections/limitations of the First Amendment",
     url: "aclu.com"
 },
 {
-    title: "What to bring",
-    description: "preparation for protests",
-    url: "humanrights.org"
+    title: "Protest Dos and Don'ts",
+    description: "what (not) to bring to a demonstration to stay safe and assist others",
+    url: "amnestyusa.org"
+},
+{
+    title: "Open your lobby",
+    description: "local businesses that accommodate protesters in need of a rest stop",
+    url: "openyourlobby.nyc"
+},
+{
+    title: "Mass Defense Program",
+    description: "National Lawyers Guild offering free legal help to protesters and activists",
+    url: "nlg.org"
 }])
 
 notes = Note.create([{
@@ -121,8 +107,7 @@ notes = Note.create([{
     {
     text: "contact lawyer to review petitions",
     completed: false
-    }
-])
+    }])
 
 user = User.create([{
     username: "Kat",
@@ -132,24 +117,35 @@ user = User.create([{
     image_url: "https://i.imgur.com/td8DG0k.jpg?1"
 }])
 
-quotes = Quote.create([{
-    text: 'Not everything that is faced can be changed, but nothing can be changed until it is faced. - James Baldwin',
-    },
-    {text:'Prejudice is a burden that confuses the past, threatens the future and renders the present inaccessible. - Dr. Maya Angelou'
-    },
-    {text:'You must be bold, brave, and courageous and find a way... to get in the way. - John Lewis'
-    },
-    {text: 'In the end, we will remember not the words of our enemies, but the silence of our friends. - Martin Luther King, Jr.'
-    }])
-
 books = Book.create([{
-    title: "Book",
-    description: "a book about stuff",
-    url: "buyhere.com"
+    title: "Until We Reckon - Violence, Mass Incarceration, and a Road to Repair",
+    author: "Danielle Sered",
+    description: "Danielle Sered is the executive director of Common Justice, a restorative justice program based in Brooklyn, New York. In her book, Until We Reckon, she offers ideas on how to help end the mass incarceration of Americans who've committed violent offenses. It's a must-read for people advocating to reform the criminal justice system.",
+    url: "booksaremagic.net"
     },
     {
-    title: "Book",
-    description: "a book about stuff",
-    url: "buyhere.com"
-    }])
+    title: "Walking with the Wind",
+    author: "John Lewis",
+    description: "Forty years ago, a teenaged boy stepped off a cotton farm in Alabama and into the epicenter of the struggle for civil rights in America, where he has remained to this day, committed still to the nonviolent ideals of his mentor Martin Luther King and the movement they both served. John Lewis's life, which he tells with charm, warmth, and toughness, ranges across the battlefields of the civil rights movement -- Selma, Montgomery, Birmingham, Mississippi.",
+    url: "booksaremagic.net"
+    },
+    {
+    title: "Notes of a Native Son",
+    author: "James Baldwin",
+    description: "James Baldwin’s essays on life in Harlem, the protest novel, movies, and African Americans abroad are as powerful today as when they were first written.",
+    url: "booksaremagic.net"
+    },
+    {
+    title: "How I Shed My Skin: Unlearning the Racist Lessons of a Southern Childhood",
+    author: "Jim Grimsley",
+    description: "More than sixty years ago, the Supreme Court ruled in Brown v. Board of Education that America’s schools could no longer be segregated by race. Critically acclaimed novelist Jim Grimsley was eleven years old in 1966 when federally mandated integration of schools went into effect in the state and the school in his small eastern North Carolina town was first integrated.",
+    url: "booksaremagic.net"
+    },
+    {
+    title: "The New Jim Crow",
+    author: "Michelle Alexander",
+    description: "Once in a great while a book comes along that changes the way we see the world and helps to fuel a nationwide social movement. The New Jim Crow is such a book. Universally praised, this book directly challenges the notion that the election of Barack Obama signals a new era of colorblindness.",
+    url: "booksaremagic.net"
+    }
+    ])
 

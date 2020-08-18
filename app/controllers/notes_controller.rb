@@ -21,18 +21,6 @@ class NotesController < ApplicationController
         render json: @note
     end
 
-    def update
-        @note.update(note_params)
-        # if note.user_id == current_user.id
-        #     note.destroy
-        #     flash[:errors] = ["Your note has been removed."]
-        #     redirect_to events_url
-        #   else
-        #     flash[:errors] = ["You can only remove an note you created."]
-        #     redirect_to events_url
-        render json: @note
-    end
-
     def destroy
         @note.destroy
         render json: @notes

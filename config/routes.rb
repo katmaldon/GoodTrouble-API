@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :quotes
+
   resources :donations
   resources :petitions
   resources :videos
