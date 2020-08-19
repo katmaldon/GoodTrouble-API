@@ -5,6 +5,7 @@ class NotesController < ApplicationController
     def index
         @notes = Note.all
         render json: @notes
+
     end
 
     def show
@@ -35,4 +36,5 @@ class NotesController < ApplicationController
     def find_note
         @note = note.find(params[:id])
     end
+
 end

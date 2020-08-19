@@ -13,6 +13,8 @@ Note.destroy_all
 User.destroy_all
 Book.destroy_all
 Resource.destroy_all
+Donation.destroy_all
+Petition.destroy_all
 
 
 puts "Seeded"
@@ -96,18 +98,55 @@ resources = Resource.create([{
     url: "nlg.org"
 }])
 
-notes = Note.create([{
-    text: "order KN95s",
-    completed: false
-    },
-    {
-    text: "order food and drinks for organizer picnic",
-    completed: false
-    },
-    {
-    text: "contact lawyer to review petitions",
-    completed: false
-    }])
+donations = Donation.create!([{
+    organization: "BLM Org",
+    description: "All funds go to BLM cause, details on website.",
+    url: "blm.com",
+    donated: false
+},
+{
+    organization: "Public Bail Funds",
+    description: "Bail fund for non-violent offenders awaiting trial",
+    url: "brooklynbailfund.org",
+    donated: true
+}])
+
+
+petitions = Petition.create([{
+    cause: "Justice for Breonna Taylor",
+    description: "arrest the cops who killed Breonna Taylor",
+    to: "",
+    url: "justiceforbreonna.com",
+    signed: false
+},
+{
+    cause: "A51",
+    description: "budget for NYPD",
+    to: "City Commissioner",
+    url: "defund.com",
+    signed: true
+}])
+
+# notes = Note.create([{
+#     text: "order KN95s",
+#     completed: false
+# },
+# {
+#     text: "order food and drinks for organizer picnic",
+#     completed: false
+# },
+# {
+#     text: "contact lawyer to review petitions",
+#     completed: false
+# }])
+
+# user_events = UserEevent.create([{
+
+#     user_id:
+#     event_id
+#     t.boolean "favorite"
+#     t.boolean "going"
+#     }])
 
 user = User.create([{
     username: "Kat",
