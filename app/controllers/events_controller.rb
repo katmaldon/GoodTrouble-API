@@ -3,8 +3,9 @@ class EventsController < ApplicationController
     before_action :find_event, only: [:show, :destroy, :update]
 
     def index
-        @events = Event.all
-        render json: @events
+        @events = Event.all.includes(:user_events)
+        @favorites = UserEvent.all
+        render json: { events: @events, favorites: @favorites }
     end
 
     def show

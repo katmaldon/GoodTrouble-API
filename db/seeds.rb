@@ -127,6 +127,11 @@ petitions = Petition.create([{
     signed: true
 }])
 
+# user_events = UserEvent.create([{
+#     user_id: "6",
+#     event_id: "57"
+# }])
+
 # notes = Note.create([{
 #     text: "order KN95s",
 #     completed: false

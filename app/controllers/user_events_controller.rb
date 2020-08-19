@@ -3,8 +3,10 @@ class UserEventsController < ApplicationController
     before_action :find_user_event, only: [:show, :destroy]
 
     def index
+        # debugger
         @user_events = UserEvent.all
-        render json: @user_events
+        @events = @user_events.map{ |userevent| Event.find(userevent.event_id)}
+        render json: @events
     end
 
     def show
@@ -12,23 +14,27 @@ class UserEventsController < ApplicationController
         render json: @user_event
     end
 
-    def new
-        @user_events = UserEvent.create(event_params)
+    def create
+        # @user_event = UserEvent.new(user_id: user.first.id)
+        @user_events = User.first.user_events.create(user_event_params)
         render json: @user_events
     end
 
     def destroy
-        render json: @user_events
+        # debugger
+        @user_event.destroy
+        # debugger
+        redirect_to :index
     end
 
     private
 
     def user_event_params
-        params.require(:user_event).permit(:user_id, :event_id)
+        params.require(:user_event).permit(:event_id)
     end
 
     def find_user_event
-        @user_event = UserEvent.find(params[:id])
+        @user_event = UserEvent.find_by(event_id: params[:id])
     end
 
 end
