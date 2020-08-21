@@ -15,6 +15,7 @@ Book.destroy_all
 Resource.destroy_all
 Donation.destroy_all
 Petition.destroy_all
+UserEvent.destroy_all
 
 
 puts "Seeded"
@@ -100,30 +101,63 @@ resources = Resource.create([{
 
 donations = Donation.create!([{
     organization: "BLM Org",
-    description: "All funds go to BLM cause, details on website.",
+    description: "All funds go to various BLM causes, find details on website.",
     url: "blm.com",
     donated: false
 },
 {
-    organization: "Public Bail Funds",
-    description: "Bail fund for non-violent offenders awaiting trial",
+    organization: "Brooklyn Bail Fund",
+    description: "Bail fund for non-violent offenders awaiting trial.",
     url: "brooklynbailfund.org",
+    donated: true
+},
+{
+    organization: "Campaign Zero",
+    description: "A comprehensive package of urgent policy solutions to change the way police serve our communities.",
+    url: "joincampaignzero.org",
+    donated: true
+},
+{
+    organization: "MPD 150",
+    description: "Enact meaningful structural change in the Minneapolis PD.",
+    url: "mpd150.com",
     donated: true
 }])
 
 
 petitions = Petition.create([{
     cause: "Justice for Breonna Taylor",
-    description: "arrest the cops who killed Breonna Taylor",
+    description: "Urge your representatives to arrest the officers who murdered Breonna Taylor.",
     to: "",
     url: "justiceforbreonna.com",
     signed: false
 },
 {
-    cause: "A51",
-    description: "budget for NYPD",
+    cause: "Defund the NYPD",
+    description: "Demand a change in allocation of funds for social services.",
     to: "City Commissioner",
-    url: "defund.com",
+    url: "actionnetwork.org",
+    signed: true
+},
+{
+    cause: "Ban Rubber Bullets",
+    description: "Ban the local and federal use of non-lethal projectiles in crowd control measures.",
+    to: "City Commissioner",
+    url: "change.org",
+    signed: true
+},
+{
+    cause: "Free Willie Simmons",
+    description: "Willie Simmons has served 38 years for a $9 robbery, Gov. Kay Ivey must commute Mr. Simmons sentence.",
+    to: "City Commissioner",
+    url: "thepetitionssite.com",
+    signed: true
+},
+{
+    cause: "Hands Up Act",
+    description: "Federal legislation that prohibits police officers from shooting unarmed citizens and makes such an incident a felony.",
+    to: "City Commissioner",
+    url: "panthernow.com",
     signed: true
 }])
 
